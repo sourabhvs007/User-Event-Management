@@ -1,0 +1,23 @@
+
+
+<h2> listing users </h2>
+
+
+
+<table border="1px">
+  <tr>
+    <th>Name</th>
+
+    <th colspan="2"></th>
+  </tr>
+ 
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.fname %></td>
+
+      <td><%= link_to 'Show events', user_events_path(user) %></td>
+      <td><%= link_to 'Create events', new_user_event_path(user) %></td>
+    
+    </tr>
+  <% end %>
+</table>

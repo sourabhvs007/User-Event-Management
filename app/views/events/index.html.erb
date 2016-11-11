@@ -1,0 +1,30 @@
+
+
+<h2> listing users </h2>
+
+
+
+<table border="1px">
+  <tr>
+    <th>title</th>
+    <th>venue</th>
+    <th>date</th>
+    <th>time</th>
+    <th>description</th>
+
+    <th colspan="2"></th>
+  </tr>
+ 
+  <% @events.each do |event| %>
+    <tr>
+      <td><%= event.title %></td>
+      <td><%= event.venue %></td>
+      <td><%= event.date %></td>
+      <td><%= event.time %></td>
+      <td><%= event.description %></td>
+
+
+  
+    </tr>
+  <% end %>
+</table>

@@ -6,14 +6,14 @@ class SessionsController < ApplicationController
   def create
     user = User.authenticate(params[:email], params[:password])	
   
-
-  if user
-    session[:user_id] = user.id
-    redirect_to events_path, :notice => "Logged in!"
-  else
-    flash.now.alert = "Invalid email or password"
-    render "new"
-  end
+redirect_to new_user_event_path
+  # if user
+  #   session[:user_id] = user.id
+  #   redirect_to user_events_path(current_user), :notice => "Logged in!"
+  # else
+  #   flash.now.alert = "Invalid email or password"
+  #   render "new"
+  # end
 end
 
   def failure
