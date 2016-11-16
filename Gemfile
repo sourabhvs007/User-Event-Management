@@ -7,9 +7,10 @@ gem 'rails', '4.2.7.1'
 # gem 'sqlite3'
 gem 'pg'
 gem 'pry'
-gem 'bcrypt'
+
+gem 'bcrypt', :require  => "bcrypt"
 gem 'bootstrap_form'
-gem 'bootstrap-sass', '3.3.6'
+# gem 'bootstrap-sass', '3.3.6'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
