@@ -82,7 +82,7 @@
                  </div>
                </center>
              </div>
-             <div class="modal-footer"></button>
+       
              </div>
            </div>
            
@@ -104,17 +104,14 @@
 
 
          <%= link_to 'Edit Event', edit_user_event_path(@user, event) %>
-         <%@participants=event.invitee%>
-         <% binding.pry%>
-         
 
          <div class="container">
           
           <!-- Trigger the modal with a button -->
-          <a  data-toggle="modal" data-target="#myModal2">Participants</a>
+          <a  data-toggle="modal" data-target="#myModal2-<%=event.id%>">Participants</a>
 
           <!-- Modal -->
-          <div class="modal fade" id="myModal2" role="dialog">
+          <div class="modal fade" id="myModal2-<%=event.id%>" role="dialog">
             <div class="modal-dialog">
               
               <!-- Modal content-->
@@ -124,44 +121,46 @@
                   <h4 class="modal-title">List of Participants		</h4>
                 </div>
                 <div class="modal-body">
-                  
+         
+                  <%@participants=event.invitee%>
+
                   <% @participants.each do |user| %>
                   
-                  <p><%=user.fname %><p>
-                    
-                    
-                    <% end %>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                  </div>
+                  <p><%= user.fname %></p>
+                  
+                  
+                  <% end %>
                 </div>
-                
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
               </div>
+              
             </div>
-            
           </div>
-
+          
         </div>
-        <% end %>
 
       </div>
-      <div class="col-xs-6">
-       adsff
-     </div>
+      <% end %>
 
-
-
-
-
-
+    </div>
+    <div class="col-xs-6">
+     adsff
    </div>
-   <%params[:id]=params[:user_id]%>
-   
-   <button type="button" class="btn btn-info btn-lg" >Logout</button>
 
- </body>
- </html>
+
+
+
+
+
+ </div>
+ <%params[:id]=params[:user_id]%>
+ 
+ <button type="button" class="btn btn-info btn-lg" >Logout</button>
+
+</body>
+</html>
 
 
 

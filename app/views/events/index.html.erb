@@ -1,5 +1,9 @@
 <div class="container">
 
+
+
+
+
   <h2> listing Events </h2>
 
 
@@ -14,7 +18,7 @@
       <th> </th>
       <th colspan="2"></th>
     </tr>
-    
+
     <% @events.each do |event| %>
     <tr>
       <td><%= event.title %></td>
@@ -24,12 +28,16 @@
       <td><%= event.description %></td>
       <td><%= link_to "participants", user_event_path(current_user, event), :remote => true, :data => {:toggle => "modal", :target => "#myModal"}%></td>
 
-      
+
     </tr>
     <% end %>
   </table>
 
   <div id="myModal" class="modal fade" role="dialog">
-    
+
   </div>
+
+
+
+
 </div>
