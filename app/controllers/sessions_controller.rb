@@ -13,5 +13,9 @@ def new
       render "new"
     end
   end
+  def destroy
+    session[:user_id] = nil
+    redirect_to welcome_url, :notice => "Logged out!"
+  end
  
 end

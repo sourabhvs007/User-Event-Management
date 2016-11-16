@@ -16,3 +16,18 @@
 //= require bootstrap.min
 //= require_tree .
 
+$(document).ready(function () {
+$("#foo").validate({
+
+rules: {
+"user[fname]": {required: true, firstname: true},
+"user[lname]": {required: true, lastname: true},
+"user[username]": {required: true, username: true},
+"user[phone]": {required: true, phone: true,maxlength: 10},
+"user[email]": {required: true, email: true},
+"user[password]": {required: true, minlength: 6},
+"user[password_confirmation]": {required: true, equalTo: "#customer_password"}
+// submitHandler: function(form) { form.submit();}
+}
+});
+});

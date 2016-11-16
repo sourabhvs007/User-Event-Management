@@ -25,7 +25,7 @@ class EventsController < ApplicationController
 		end
 	end
 	def index
-		
+
 		@events=Event.all
 		
 	end
@@ -48,10 +48,7 @@ class EventsController < ApplicationController
 		redirect_to  new_user_event_path
 	end
 
-	def destroy
-		session[:user_id] = nil
-		redirect_to root_url, :notice => "Logged out!"
-	end
+	
 	private
 	def event_params
 		params.require(:event).permit(:title,:venue,:date,:time,:description,:owner_id)
