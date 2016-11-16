@@ -16,7 +16,7 @@
 <%= f.submit :Submit,:class=>"btn" %>
 <%end%>
 <%else%>
-<%binding.pry%>
+
 <%= form_for :event, url: user_event_path, method: :put do |f|%>
 
 <%= f.label :Enter_Event_name%>    <%= f.text_field :title  %></br></br>
