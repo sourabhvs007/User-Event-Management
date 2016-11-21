@@ -1,0 +1,29 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+        <%= link_to "Event app", new_user_event_path(@user), id: "logo" %>
+        <nav>
+          <ul class="nav navbar-nav navbar-right">
+            <li> <%= link_to current_user.username, user_path(@user) %></li>
+            
+            <li> <%= link_to "Logout", log_out_path(@user) %></li>
+
+          </ul>
+        </nav>
+      </div>
+      </header>
+<div class="container">
+<div class="col-xs-4"></div>
+<div class="col-xs-4">
+<%= bootstrap_form_for(@user) do |f| %>
+  <%= f.text_field :fname,label: "First name" %>
+  <%= f.text_field :lname ,label: "last name"%>
+  <%= f.text_field :phone ,label: "Phone num"%>
+  <%= f.email_field :email,label: "Email address" %>
+  <%= f.text_field :username ,label: "User name"%>
+  <%= f.password_field :password%>
+  <%= f.password_field :password_confirmation, label: "Confirm Password" %>
+<center> <%= f.submit "update" ,class: "btn btn-lg btn-success "%></center>
+
+<% end %>
+</div>
+</div>

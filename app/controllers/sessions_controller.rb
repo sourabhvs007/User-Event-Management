@@ -1,5 +1,8 @@
 class SessionsController < ApplicationController
 def new
+  # respond_to do | format | 
+  #     format.js    
+  #   end
   end
   
   def create
@@ -9,7 +12,7 @@ def new
       session[:user_id] = user.id
       redirect_to new_user_event_path(user)
     else
-      flash.now.alert = "Invalid email or password"
+      flash[:error] = "Invalid email or password"
       render "new"
     end
   end

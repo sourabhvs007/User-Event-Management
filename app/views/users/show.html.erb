@@ -1,0 +1,44 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+        <%= link_to "Event app", new_user_event_path(@user), id: "logo" %>
+        <nav>
+          <ul class="nav navbar-nav navbar-right">
+            <li> <%= link_to current_user.username, user_path(@user) %></li>
+            
+            <li> <%= link_to "Logout", log_out_path(@user) %></li>
+
+          </ul>
+        </nav>
+      </div>
+      </header>
+<div class="center jumbotron">
+  <h1>Profile</h1>
+
+  <h2>
+    <label style="color:green">First name : </label> <%=@user.fname%>
+  </h2>
+  <h2>
+    <label style="color:green">Last name : </label><%=@user.lname%>
+  </h2>
+  <h2>
+    <label style="color:green">User name : </label><%=@user.username%>
+  </h2>
+  <h2>
+    <label style="color:green">Email : </label><%=@user.email%>
+  </h2>
+  <h2>
+   <label style="color:green"> Phone : </label> <%=@user.phone%>
+  </h2>
+
+  
+        <%= button_to "Edit Profile", edit_user_path,method: :get, :class => "btn btn-success" %>
+      <br>
+     
+       <%= button_to 'Delete Account',user_path(@user), method: :delete,:class => "btn btn-danger", data: {
+    confirm: "Are you sure? Your account will be deleted !"
+    }%>
+    
+
+
+ 
+</div>

@@ -15,12 +15,12 @@
 <div class="col-sm-2"></div>
 <div class="col-sm-8" >
 <%= bootstrap_form_for(@user) do |f| %>
-  <%= f.text_field :fname,label: "First name" %>
-  <%= f.text_field :lname ,label: "last name"%>
-  <%= f.text_field :phone ,label: "Phone num"%>
+  <%= f.text_field :fname,label: "First name",:required => true %>
+  <%= f.text_field :lname ,label: "last name",:required => true%>
+  <%= f.text_field :phone ,label: "Phone num",:required => true%>
   <%= f.email_field :email,label: "Email address" %>
   <%= f.text_field :username ,label: "User name"%>
-  <%= f.password_field :password%>
+  <%= f.password_field :password,:required => true%>
   <%= f.password_field :password_confirmation, label: "Confirm Password" %>
  <%= f.submit "Sign up" ,class: "btn btn-lg btn-primary "%>
 

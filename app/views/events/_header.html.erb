@@ -3,6 +3,7 @@
         <%= link_to "Event app", new_user_event_path(@user), id: "logo" %>
         <nav>
           <ul class="nav navbar-nav navbar-right">
+            <li> <%= link_to current_user.username, user_path(@user) %></li>
             
             <li> <%= link_to "Logout", log_out_path(@user) %></li>
 

@@ -7,7 +7,8 @@ gem 'rails', '4.2.7.1'
 # gem 'sqlite3'
 gem 'pg'
 gem 'pry'
-
+gem 'bootstrap-datepicker-rails'
+gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 gem 'bcrypt', :require  => "bcrypt"
 gem 'bootstrap_form'
 # gem 'bootstrap-sass', '3.3.6'

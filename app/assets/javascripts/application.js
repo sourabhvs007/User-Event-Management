@@ -15,9 +15,11 @@
 //= require turbolinks
 //= require bootstrap.min
 //= require_tree .
+//= require jquery.validate.min
+
 
 $(document).ready(function () {
-$("#foo").validate({
+$("#new_user").validate({
 
 rules: {
 "user[fname]": {required: true, firstname: true},
@@ -26,7 +28,7 @@ rules: {
 "user[phone]": {required: true, phone: true,maxlength: 10},
 "user[email]": {required: true, email: true},
 "user[password]": {required: true, minlength: 6},
-"user[password_confirmation]": {required: true, equalTo: "#customer_password"}
+"user[password_confirmation]": {required: true, equalTo: "#user_password"}
 // submitHandler: function(form) { form.submit();}
 }
 });

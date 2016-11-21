@@ -1,23 +1,26 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
-      <div class="container">
-        <%= link_to "Event app", welcome_path, id: "logo" %>
-        <nav>
-          <ul class="nav navbar-nav navbar-right">
-            <li> <%= link_to "log in", log_in_path %></li>
-            <li> <%= link_to "Sign up", new_user_path %></li>
+  <div class="container">
+    <%= link_to "Event app", welcome_path, id: "logo" %>
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <li> <%= link_to "log in", log_in_path %>
+         <div id="myModal" class="modal fade" role="dialog">
+         </div>
+       </li>
+       <li> <%= link_to "Sign up", new_user_path %></li>
 
-          </ul>
-        </nav>
-      </div>
-      </header>
+     </ul>
+   </nav>
+ </div>
+</header>
 <div class="center jumbotron">
   <h1>Welcome to the Event blog</h1>
 
   <h2>
     This is the home page for the
-     Event blog application.
+    Event blog application.
   </h2>
 
- 
+
 </div>
 
