@@ -4,6 +4,7 @@ class EventsController < ApplicationController
 	def new
 		@event=Event.new
 		@users=User.all
+		gon.user=@user
 		@events=@user.events
 		tempJson = @events.to_json.html_safe
 		# aFile = File.new("events.json", "r+")
