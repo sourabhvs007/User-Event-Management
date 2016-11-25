@@ -5,9 +5,9 @@ class UsersController < ApplicationController
 	def create
 		@user=User.new(user_params)
 		if @user.save
-			redirect_to welcome_path, flash[:success] = "User Created successfully !"
+			redirect_to welcome_path, :notice => "User Created successfully !"
 		  else
-		    render 'new', flash[:error] = "Something went wrong."
+		    render 'new', :notice => "Something went wrong."
 		  end
 	end
 	def index
@@ -28,7 +28,7 @@ class UsersController < ApplicationController
 	def destroy
 		@user=User.find_by_id(params[:id])
 		@user.destroy
-		redirect_to welcome_path, flash[:success] = "Account Deleted successfully !!"
+		redirect_to welcome_path, :notice => "Account Deleted successfully !!"
 	end
 	private
 	def user_params
