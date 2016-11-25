@@ -1,9 +1,20 @@
 class EventsController < ApplicationController
 	before_filter :find_user
+	require 'json'
 	def new
 		@event=Event.new
 		@users=User.all
 		@events=@user.events
+		tempJson = @events.to_json.html_safe
+		# aFile = File.new("events.json", "r+")
+		# aFile.syswrite(tempJson)
+		aFile=File.new(Rails.root + 'public/events.json', 'r+')
+		aFile.syswrite(tempJson)
+
+		# binding.pry
+
+
+		# render :json => @events
 	end
 	def create
 
@@ -41,7 +52,7 @@ class EventsController < ApplicationController
 		@event=Event.find_by_id(params[:id])
 	end
 	def update
-		binding.pry
+		# binding.pry
 		@event=Event.find_by_id(params[:id])
 
 		@event.update_attributes(event_params)

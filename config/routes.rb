@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   root 'welcome#index', :as => 'welcome'
 get "log_in" => "sessions#new", :as => "log_in"
 get "log_out" => "sessions#destroy", :as => "log_out"
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
   resources :sessions

@@ -1,54 +1,54 @@
       <%= render 'events/header' %>
 
-<%if @event.owner_id == @user.id%> 
+      <%if @event.owner_id == @user.id%> 
 
-<%= form_for :event, url: user_event_path, method: :put do |f|%>
+      <%= form_for :event, url: user_event_path, method: :put do |f|%>
 
-<%= f.label :Enter_Event_name%>    <%= f.text_field :title ,:disabled => true %></br></br>
-<%= f.label :Enter_Venue%>       <%= f.text_field :venue,:disabled => true %></br></br>
-<%= f.label :Enter_date%>       <%= f.text_field :date ,:disabled => true%></br></br>
-<%= f.label :Enter_time %>           <%= f.text_field :time,:disabled => true %></br></br>
-<%= f.label :Enter_description%>    <%= f.text_area :description, size: "60x5",:disabled => true %></br></br>
-<%= f.label :Invited_by %> </br>    
-<%= current_user.username%> </br>
+      <%= f.label :Enter_Event_name%>    <%= f.text_field :title ,:disabled => true %></br></br>
+      <%= f.label :Enter_Venue%>       <%= f.text_field :venue,:disabled => true %></br></br>
+      <%= f.label :Enter_date%>       <%= f.text_field :date ,:disabled => true%></br></br>
+      <%= f.label :Enter_time %>           <%= f.text_field :time,:disabled => true %></br></br>
+      <%= f.label :Enter_description%>    <%= f.text_area :description, size: "60x5",:disabled => true %></br></br>
+      <%= f.label :Invited_by %> </br>    
+      <%= current_user.username%> </br>
 
+    </br>
+    <%@parts=@event.invitee%>
+    <%= f.label :List_of_Invitees %>
+    <% @parts.each do |role| %>
+    <li>
+     
+     <%= role.username %>
+   </li>
+   <% end %> 
+   <br>
+
+   <%= f.submit :Submit,:class=>"btn" %>
+   <%end%>
+   <%else%>
+
+   <%= form_for :event, url: user_event_path, method: :put do |f|%>
+
+   <%= f.label :Enter_Event_name%>    <%= f.text_field :title  %></br></br>
+   <%= f.label :Enter_Venue%>       <%= f.text_field :venue%></br></br>
+   <%= f.label :Enter_date%>       <%= f.text_field :date %></br></br>
+   <%= f.label :Enter_time %>           <%= f.text_field :time%></br></br>
+   <%= f.label :Enter_description%>    <%= f.text_area :description, size: "60x5" %></br></br>
+   <%= f.label :Invited_by %> </br>    
+   <%= current_user.username%> </br>
  </br>
- <%@parts=@event.invitee%>
-<%= f.label :List_of_Invitees %>
-<% @parts.each do |role| %>
-                       <li>
-                         
-                         <%= role.username %>
-                       </li>
-                       <% end %> 
-<br>
-
-<%= f.submit :Submit,:class=>"btn" %>
-<%end%>
-<%else%>
-
-<%= form_for :event, url: user_event_path, method: :put do |f|%>
-
-<%= f.label :Enter_Event_name%>    <%= f.text_field :title  %></br></br>
-<%= f.label :Enter_Venue%>       <%= f.text_field :venue%></br></br>
-<%= f.label :Enter_date%>       <%= f.text_field :date %></br></br>
-<%= f.label :Enter_time %>           <%= f.text_field :time%></br></br>
-<%= f.label :Enter_description%>    <%= f.text_area :description, size: "60x5" %></br></br>
-<%= f.label :Invited_by %> </br>    
-<%= current_user.username%> </br>
- </br>
-<%= f.label :Select_invitee %> 
+ <%= f.label :Select_invitee %> 
  <%@parts=@event.invitee%>
 
-<% @parts.each do |role| %>
-                       <li>
-                         <%= check_box_tag 'role_ids[]', role.id %>
-                         <%= role.username %>
-                       </li>
-                       <% end %>
-<br> 
+ <% @parts.each do |role| %>
+ <li>
+   <%= check_box_tag 'role_ids[]', role.id %>
+   <%= role.username %>
+ </li>
+ <% end %>
+ <br> 
 
-<%= f.submit :Submit,:class=>"btn" %>
+ <%= f.submit :Submit,:class=>"btn" %>
 
-<%end%>
-<%end%>
+ <%end%>
+ <%end%>
