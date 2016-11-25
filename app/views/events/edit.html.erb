@@ -1,6 +1,5 @@
       <%= render 'events/header' %>
-
-      <%if @event.owner_id == @user.id%> 
+      <%if current_user.id!=@event.owner_id%> 
 
       <%= form_for :event, url: user_event_path, method: :put do |f|%>
 

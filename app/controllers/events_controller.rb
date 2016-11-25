@@ -51,6 +51,7 @@ class EventsController < ApplicationController
 	def edit
 
 		@event=Event.find_by_id(params[:id])
+		@inviter=@event.owner_id
 	end
 	def update
 		# binding.pry
