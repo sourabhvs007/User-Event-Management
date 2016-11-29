@@ -41,17 +41,23 @@
  </br>
  <%= f.label :Select_invitee %> 
  <%@parts=User.all%>
+ <%@participants=@event.invitee%>
 
  <% @parts.each do |role| %>
  <li>
-   <%= check_box_tag 'role_ids[]', role.id %>
-   <%= role.username %>
- </li>
- <% end %>
- <br> 
+  <%if @participants.include?(role)%>
+  <%= check_box_tag 'role_ids[]', role.id, {checked: true} %>
+  <%= role.username %>
+  <%else%>
+  <%= check_box_tag 'role_ids[]', role.id %>
+  <%= role.username %> 
+  <%end%>
+</li>
+<% end %>
+<br> 
 
- <%= f.submit :Submit,:class=>"btn btn-success" %>
- <%= button_to "back", new_user_event_path(current_user), { method: :get, class: 'btn btn-success   '} %>
+<%= f.submit :Submit,:class=>"btn btn-success" %>
+<%= button_to "back", new_user_event_path(current_user), { method: :get, class: 'btn btn-success   '} %>
 
- <%end%>
- <%end%>
+<%end%>
+<%end%>
