@@ -12,8 +12,7 @@ def new
       session[:user_id] = user.id
       redirect_to new_user_event_path(user)
     else
-      :notice => "Invalid email or password"
-      render "new"
+      render "new",:notice => "Invalid email or password"
     end
   end
   def destroy
