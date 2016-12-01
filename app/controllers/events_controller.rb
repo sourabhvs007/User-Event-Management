@@ -11,7 +11,7 @@ class EventsController < ApplicationController
 		# aFile.syswrite(tempJson)
 		aFile=File.new(Rails.root + 'public/events.json', 'r+')
 		aFile.syswrite(tempJson)
-
+		
 		# binding.pry
 
 
@@ -29,8 +29,10 @@ class EventsController < ApplicationController
 			@invitation.inviter_id=params[:user_id]
 			@invitation.invitee_id=f
 			@invitation.save
+
 		end
 		if @event.save
+			
 			redirect_to new_user_event_path
 		else
 			render 'new'

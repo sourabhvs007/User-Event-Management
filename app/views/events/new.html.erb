@@ -146,8 +146,8 @@
      <div class="row">
 
 
-      <div class="col-xs-12  ">
-       <% @events.each do |event| %>
+      <div class="col-xs-6  "> <!-- event list -->
+       <% @events.reverse.each do |event| %>
 
        <div class="row" style="background-color:#D3D3D3; margin:5px; padding:20px" >
         <div class="col-xs-6">
@@ -182,24 +182,59 @@
                   <% @participants.each do |user| %>
 
                   <p><%= user.fname %></p>
-
-
                   <% end %>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
               </div>
-
             </div>
           </div>
-
         </div>
       </div>
     </div>
     <% end %>
+  </div> <!-- event list end -->
+  <div class="col-xs-6" style=" border-left:solid; border-right:solid; border-bottom:solid;  border-color:grey ; margin-top:5px; border-width:1px;" > <!-- Feed -->
+    <div class="row" style="background-color:#3b73af;color:white; padding:5px;">
+      <div class="col-xs-10">
+        Activity feed 
+      </div>
+      <!-- List icon by Icons8 -->
+      <a type="button" href="#"><img class="icon icons8-List" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAA0CAYAAADFeBvrAAABRUlEQVRoQ+2Z0Y3CQAxEZyrg6AA6o4S7CoAKoIQrDSogqcCnlRIEKJdgQpaNNflCIsae8WR5AiLYxWB6IEGlb5RmtgFwAPD1MGwF4Ifkb+kibudLgi4dYtp7KpLLuQmyvoFJ3j1nZrYF8N1jQm79JwD7NklpQ15BvffnVtP0O5Fcp9cuQWaWnrMU0dKuM8mVW1AqMLNdE7lFIarOAHa3kUun2X/D1SQfT79CdHSP0R7bxw5RddrE7I7tou1+YTihzwumZS2JtyGxXNYA+Zu5SKH5YhXL+X12V4jlrpaJ5dzpGVcglhvn3/TV8Uhhes/ydoi3IbFc3gS5u4nlhn7Hc1v6ngKxnFjuPUnyf4pYzu9Z3op4pJDXv+m7xduQWG761IzqIJYTy40K0NPF+o/1aas+faNY7tMbGOofjxSGFM/t/XAb+gNTnPA1ysNagAAAAABJRU5ErkJggg==" width="18" style="margin-left:5px" ></a>
+      <!-- Grid 2 icon by Icons8 -->
+      <a><img class="icon icons8-Grid-2" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAABTElEQVRoQ2NkGCaAcZj4g2F4eqSgf74A5+//+tSKpX///vEwMTIpMzAyXKSWmSBz2suSDqKbhxIjFd2zHRgYGPdT01JamNVRmoKRkrB6pL0kmSr2Hzl7hWHr/pMM1DLv3uPnDLNXbmMY9Qi50TMaIzhCbjRpkZukYPpGk9Zo0oKGAKxCpFa5P5q0RpPWaNLCX0CP5pHRPDKaR0bzCFnNOKJbv6Vds3yYGZg2+zpZkmURuqZbD58y3Lz7iIFa5r15/5Hh+PlrDB1lBLq6Zd2zC5gYGPup4gsaGjLa1SU3cEcrxNEKcbRCHK0QySo/iK4QR7u6OMJ3tPgdLX5Hi9/R4ne0+B2dsSIrDUA1jdYj1KpH0sK9KYkIuN7Lt+6D+9jUMu/Zq7cMW/afIH5Wlyq+oKEhBPvsNLSb5kYPz7UoNA82GlowGiM0DFyyjAYA+dB2UQepTJwAAAAASUVORK5CYII=" width="18" style="margin-left:5px" ></a>
 
-  </div>
+      <a href=""><img class="icon icons8-RSS" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAA0CAYAAADFeBvrAAAEAklEQVRoQ92aj1UUMRCHZypQKlAqECpQK1ArUDqACoQKhArECpAKhArECoQKxArG953JvWMvyczu7d4d5L179+D2T75k5jczSVQKzcyei8g7EXkvInsi8rJ03Qb+dysiNyLyXUQuVfW+2wft/sPMPovIoYgAtc0NmGNVPVvs5BwozcoXEfm0zRSFvp2LyFGerUWgr48QJvOdq+oBf8yAzOxYRDC1x9yYpVNNpvb7EfiMN9j41C5A+Azm9hTaAUBIIBJda0fIpKoimZgnEs4HFcySzverLRiRS4Awt1qcmdllpKPJdIlbb1L8eha5b+RrbgGyxkN3SsEr0olkypjz68j1Y10zGVDuYDJRVPTjWJ1uPccDOlFVOrNyS2AEwUlnzAMCBKBvWRRWJTMz/AywSXwsAtRlQO0WP1eqet0HNAkIUC117fPI+bVDgGovQv6rWXDpJjMjCSZ/HK2NCZQ7RcQGDP+bxa5WMzNi2NVYJjgF0GL/MSsXbEyoqYGAY8ZOVfVkHTO1DqDMQaX5oWWGY8zUOoHybB2oKj5WbAnqp+d7td/XDZT7ART+VYMarH4RoG62jSqRaZOE8hka+T0orwooDoYH5GbbC1k2o9q3hKhCpeci+70yCg+oV7ZtZswY5UYfMISi6FMpTbro40+jAuUX98wAkPX9mvqZGUE3bNYe0OBsO6kVI/8iMMI3qrpfSY8oPilCQ80D4iGDs+3kB4xwxASrg2dmKGKonooALY4MwRET4ZuSgm8vV0MRI1BV0+sTm/oCdTsfTWuAAt4zPwapuHIb9aVVgTIg8orEj5EB7JYEIrrcNhZQBmPxvJqEBtWvNUtYRDMujQ0E2HyduaJamF5LJP6vgBa2SiLiMAUQHC3FIvj+cLSkmEFEzG4qIPrbygDwuZZAsJnFYsqDlsLAn9ZgTAl0q6q7FbNz19NVdWkzjmeZWdNkpwSqml5kpEXkraoSv7qz1AyyUaC7tE2ZAyklBEmoF1fuVXWnMktejlb0Q28vKwIEzF5XddIoR4IliedSRuF1LGUiS0HWy8AjQKum92eqSq3UNR2cvlUaXKsqiti9r6mSEaBqTZTWq71MuNYxzLa1dlAUFe+d6wBqlQatrRxpKF31vgjQqiY3qGPY2VRABEEc+8GpjSQKmEzklMmS2Xqmkxyn933MkBe1eTbX4Ni/0ovIxZDtCEwxHgVUbsh9dwANWi5ycrHSz7PKN/1A9RndSOtz32zT2E1DBnR+U7fMtvWpJnuvf22qx433/sUFnt7RmEwcKZ62cFZyl+ZVbvd4GcoVWi7aIjiE5nDpeNnCTCHPKEuvNeUNAOIzrGE8OOlSK6IQCpLHfETTKxPWxUPmn49ocv5o6YjmP3JLU7KPTwooAAAAAElFTkSuQmCC" width="17" style="margin-left:5px"></a>
+    </div>
+    <div class="row"><br>
+
+     <% @events.reverse.each do |event| %>
+     <div>
+       <%if event.created_at == event.updated_at%>
+       <% if event.owner_id==current_user.id%>
+       <i style="color:grey"><%=event.created_at.localtime.strftime('%d %b %Y, %H:%M')%></i>.<br>
+       <b><div style="background-color:#e0f0ff;"><%= link_to "You", user_path(@user)%></b> Created  <%=link_to event.title.capitalize, edit_user_event_path(@user, event)%>.</div>
+       <%else%>
+       <i style="color:grey"><%=event.created_at.localtime.strftime('%d %b %Y, %H:%M')%></i>.<br>
+       <% @owner=User.find_by_id(event.owner_id) %>
+       <b><div style="background-color:#e0f0ff;"><%= link_to @owner.username.capitalize, user_path(@owner) %></b> Created  <%= link_to event.title.capitalize, edit_user_event_path(@user, event)%>.</div>
+       <%end%>
+       <%else%>
+       <% if event.owner_id==current_user.id%>
+       <i style="color:grey"><%=event.updated_at.localtime.strftime('%d %b %Y, %H:%M')%></i>.<br>
+       <b><div style="background-color:#e0f0ff;"><%= link_to "You", user_path(@user)%></b> Updated  <%=link_to event.title.capitalize, edit_user_event_path(@user, event)%>.</div>
+       <%else%>
+       <i style="color:grey"><%=event.updated_at.localtime.strftime('%d %b %Y, %H:%M')%></i>.<br>
+       <% @owner=User.find_by_id(event.owner_id) %>
+       <b><div style="background-color:#e0f0ff;"><%= link_to @owner.username.capitalize, user_path(@owner) %></b> Updated  <%=link_to event.title.capitalize, edit_user_event_path(@user, event)%>.</div>
+       <%end%>
+       <%end%><br>
+       </div>
+   <%end%>
+   </div>
+ </div>
+</div> <!-- feed end -->
 
 
 </div>

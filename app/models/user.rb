@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   validates :email, presence: :true, uniqueness: :true
 	has_many :invitations,foreign_key: :invitee_id
 	has_many :events, through: :invitations
+  # has_many :notifications,foreign_key: :recipient_id
 
 def self.authenticate(email, password)
   user = find_by_email(email)

@@ -1,8 +1,9 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="container">
+  <div class="container" >
     <%= link_to "Event app", new_user_event_path(@user), id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
+      	<li style="padding:7px;"><button type="button" class="btn btn-primary" ><img src="https://d3rnbxvnd0hlox.cloudfront.net/images/channels/651849913/icons/on_color_large.png" style="width:18px"> <span class="badge"></span></button></li>
         <li> <%= link_to current_user.username, user_path(@user) %></li>
         
         <li> <%= link_to "Logout", log_out_path(@user) %></li>
