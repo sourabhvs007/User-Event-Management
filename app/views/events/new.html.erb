@@ -213,17 +213,17 @@
      <div>
        <%if event.created_at == event.updated_at%>
        <% if event.owner_id==current_user.id%>
-       <i style="color:grey"><%=event.created_at.localtime.strftime('%d %b %Y, %H:%M')%></i>.<br>
-       <b><div style="background-color:#e0f0ff;"><%= link_to "You", user_path(@user)%></b> Created  <%=link_to event.title.capitalize, edit_user_event_path(@user, event)%>.</div>
+       <i style="color:grey; padding-left:10px;"><%=event.created_at.localtime.strftime('%d %b %Y, %H:%M')%></i>.<br>
+       <b><div style="background-color:#e0f0ff; padding-left:10px;"><%= link_to "You", user_path(@user)%></b> Created  <%=link_to event.title.capitalize, edit_user_event_path(@user, event)%>.</div>
        <%else%>
-       <i style="color:grey"><%=event.created_at.localtime.strftime('%d %b %Y, %H:%M')%></i>.<br>
+       <i style="color:grey; padding-left:10px;"><%=event.created_at.localtime.strftime('%d %b %Y, %H:%M')%></i>.<br>
        <% @owner=User.find_by_id(event.owner_id) %>
-       <b><div style="background-color:#e0f0ff;"><%= link_to @owner.username.capitalize, user_path(@owner) %></b> Created  <%= link_to event.title.capitalize, edit_user_event_path(@user, event)%>.</div>
+       <b><div style="background-color:#e0f0ff; padding-left:10px;"><%= link_to @owner.username.capitalize, user_path(@owner) %></b> Created  <%= link_to event.title.capitalize, edit_user_event_path(@user, event)%>.</div>
        <%end%>
        <%else%>
        <% if event.owner_id==current_user.id%>
        <i style="color:grey"><%=event.updated_at.localtime.strftime('%d %b %Y, %H:%M')%></i>.<br>
-       <b><div style="background-color:#e0f0ff;"><%= link_to "You", user_path(@user)%></b> Updated  <%=link_to event.title.capitalize, edit_user_event_path(@user, event)%>.</div>
+       <b><div style="background-color:#e0f0ff; padding-left:10px;"><%= link_to "You", user_path(@user)%></b> Updated  <%=link_to event.title.capitalize, edit_user_event_path(@user, event)%>.</div>
        <%else%>
        <i style="color:grey"><%=event.updated_at.localtime.strftime('%d %b %Y, %H:%M')%></i>.<br>
        <% @owner=User.find_by_id(event.owner_id) %>

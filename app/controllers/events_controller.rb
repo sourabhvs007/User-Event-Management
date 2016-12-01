@@ -60,6 +60,14 @@ class EventsController < ApplicationController
 		@event=Event.find_by_id(params[:id])
 
 		@event.update_attributes(event_params)
+		params[:role_ids].each do |f|
+			@invitation=Invitation.new
+			@invitation.event_id=@event.id
+			@invitation.inviter_id=params[:user_id]
+			@invitation.invitee_id=f
+			@invitation.save
+
+		end
 		redirect_to  new_user_event_path
 	end
 
