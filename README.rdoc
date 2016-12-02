@@ -1,28 +1,6 @@
-== README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+== User Event Management Web application
+This is a simple dynamic web application.
+Users can signup and loginl, After login they can create events and invite other users.
+Only owner can edit an event. Others can view details and participants of that event.
+Recently created or updated events are notified in Activity Feed.
+App deployed to heroku, Feel free to check working of it https://event-management-rails.herokuapp.com/
