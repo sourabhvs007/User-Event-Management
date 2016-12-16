@@ -1,5 +1,5 @@
 # set path to application
-app_dir = File.expand_path("/u01/apps/qwinix/production-kuldeep/", __FILE__)
+app_dir = File.expand_path("/u01/apps/qwinix/production-kuldeep/current", __FILE__)
 shared_dir = "#{app_dir}/shared"
 working_directory app_dir
 
