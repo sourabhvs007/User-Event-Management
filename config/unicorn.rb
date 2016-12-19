@@ -10,7 +10,7 @@ preload_app true
 timeout 30
 
 # Set up socket location
-listen "u01/apps/qwinix/production-kuldeep/shared/sockets/unicorn.sock", :backlog => 64
+listen "/u01/apps/qwinix/production-kuldeep/shared/sockets/unicorn.sock", :backlog => 64
 
 # Logging
 stderr_path "/u01/apps/qwinix/production-kuldeep/current/log/unicorn.stderr.log"
