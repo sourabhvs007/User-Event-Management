@@ -6,7 +6,7 @@ production:
   pool: 5
   username: postgres
   password: password
-  host: localhost
+  host: postgres-event
   port: 5432
 
 development:
@@ -17,7 +17,7 @@ development:
   pool: 5
   username: postgres
   password: password
-  host: localhost
+  host: postgres-event
   port: 5432
 
 it:
@@ -28,5 +28,5 @@ it:
   pool: 5
   username: postgres
   password: password
-  host: localhost
+  host: postgres-event
   port: 5432
